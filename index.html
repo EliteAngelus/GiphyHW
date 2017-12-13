@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Magical dbz Button</title>
+</head>
+<style type="text/css">
+  
+  #button{
+      color: green;
+      border-radius: 10px;
+      margin: 5px;
+      margin-top: 20px;
+  }
+
+  .giphy{
+    color: green;
+    border-radius: 10px;
+    margin: 10px;
+
+  }
+
+  form{
+    margin: 20px;
+  }
+
+</style>
+
+<body>
+<audio autoplay loop>
+  <source src="no limit.mp3" type="audio/mpeg" loop="loop">
+</audio>
+
+  <!-- DIV FOR BUTTONS TO DISPLAY -->
+  <div id="button-view"></div>
+    <!-- LABEL FOR THE FORM -->
+  <form>
+    <label for="gif-input"> Add A Gif</label>
+    <input type="text" id="gif-input">
+  </form>
+  <!-- BUTTON FOR USER TO CLICK TO RETRIEVE DATA -->  
+  <button id="button" type="submit">They Giphy Button!</button>
+
+<br>
+  <!-- DIV WHERE IMAGES WILL DISPLAY -->
+<div id="images">
+  <img style="width: 300px; height: 300px;" src="https://media2.giphy.com/media/3otPoK6i6fYp80YwJW/giphy.gif">
+  <img style="width: 300px; height: 300px;" src="https://media0.giphy.com/media/26ueZWVMg0tR9xGG4/giphy.gif">
+  <img style="width: 300px; height: 300px;" src="https://media1.giphy.com/media/26xBBOiQRnMhlkOli/giphy.gif">
+  <img style="width: 300px; height: 300px;" src="https://media3.giphy.com/media/T7ukTzXQVmWqI/giphy.gif">
+  <img style="width: 300px; height: 300px;" src="https://media0.giphy.com/media/l0ErA4yJWrKFX8li0/giphy.gif">
+  </div>
+  <!-- JQUERY LINK -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- JAVASCRIPT SCRIPT  -->
+  <script type="text/javascript">
+    
+   var gifButtons = ["hip hop", "dance"];
+
+     function renderButtons() {
+        // Deletes the movies prior to adding new movies
+        // (this is necessary otherwise you will have repeat buttons)
+        $("#button-view").empty();
+        // Loops through the array of movies
+        for (var i = 0; i < gifButtons.length; i++) {
+          // Then dynamicaly generates buttons for each movie in the array
+          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+          var a = $("<button>");
+          // Adds a class of movie to our button
+          a.addClass("giphy");
+          // Added a data-attribute
+          a.attr("data-name", gifButtons[i]);
+          // Provided the initial button text
+          a.text(gifButtons[i]);
+          // Added the button to the buttons-view div
+          $("#button-view").append(a);
+        }
+      }
+
+      // CLICKABLE BUTTON
+     $("#button").on("click", function(event) {
+
+      var gifInput = $("#gif-input").val().trim();
+
+      function empty() {
+    
+      var x = $("#gif-input").val();
+    
+      if (x === " ") {
+        alert("Search a Gif!");
+        $('#button').attr("disabled", "disabled");
+        return false;
+      }else{
+          $("#button").removeAttr("disabled");
+      }
+    }
+
+      // pushes userInput into the array
+
+      gifButtons.push(gifInput);
+
+      renderButtons();
+
+      displayGifs();   
+
+      event.preventDefault();
+
+      empty();
+  
+  });
+
+          // DISPLAYING THE GIFS ON THE PAGE.
+      function displayGifs(){
+
+      var input = $(this).attr("data-name");
+
+      console.log(input);
+
+      var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag= " + input + ";" + ""
+
+      console.log(queryURL);
+      
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+       //LITERALLY MEANS DONE GRABBING API
+      .done(function(response) {
+        //CREATING A PATH AND STORING TO A VARIABLE.
+        var imageUrl = response.data.image_original_url;
+        //CREATING A IMG TAG
+        var dbzImage = $("<img>").width(300).height(300);
+        //CREATING ATTRBUTES FOR IMAGE TAG.
+        dbzImage.attr("src", imageUrl);
+        //INSERTING THE IMG INTO THE HTML
+        $("#images").prepend(dbzImage);
+
+        
+      });
+    }
+
+$(document).on("click", ".giphy", displayGifs);
+
+
+renderButtons();
+
+
+  </script>
+</body>
+
+</html>
