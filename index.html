@@ -1,65 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>The Magical my Button</title>
-</head>
-  <!-- JQUERY LINK --> 
- <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+  <head>
+    <meta charset="utf-8">
+    <title>The Magical my Button</title>
+  </head>
+    <!-- JQUERY LINK --> 
+   <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" type="text/css" href="./assets/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/CSS/style.css">
 
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<body style="background-color: #404040">
-<audio id="music" autoplay loop>
-  <source src="no limit.mp3" type="audio/mpeg" loop="loop">
-</audio>
+  <body style="background-color: #404040">
+  <audio id="music" autoplay loop>
+    <source src="no limit.mp3" type="audio/mpeg" loop="loop">
+  </audio>
 
-  <!-- DIV FOR BUTTONS TO DISPLAY -->
-  <div id="button-view"></div>
-<br>
-  <!-- DIV WHERE IMAGES WILL DISPLAY -->
-  <div class="row">
- <div class="col-lg-7"> 
-    <div id="images">
-      
-      <img class="giphy" data-state= "still" style="width: 200px; height: 200px;" src="https://media0.giphy.com/media/26ueZWVMg0tR9xGG4/giphy.gif">
-      
-      <img  class="giphy" data-state = "still" style="width: 200px; height: 200px;" src="https://media1.giphy.com/media/26xBBOiQRnMhlkOli/giphy.gif">
-      
-      
-      <img class="giphy" data-state = "still" style="width: 200px; height: 200px;" src="https://media0.giphy.com/media/l0ErA4yJWrKFX8li0/giphy.gif">
+    <!-- DIV FOR BUTTONS TO DISPLAY -->
+    <div id="button-view"></div>
+  <br>
+    <!-- DIV WHERE IMAGES WILL DISPLAY -->
+    <div class="row">
+   <div class="col-lg-7"> 
+      <div id="images">
+        
+        <img class="giphy" data-state= "still" style="width: 200px; height: 200px;" src="https://media0.giphy.com/media/26ueZWVMg0tR9xGG4/giphy.gif">
+        
+        <img  class="giphy" data-state = "still" style="width: 200px; height: 200px;" src="https://media1.giphy.com/media/26xBBOiQRnMhlkOli/giphy.gif">
+        
+        
+        <img class="giphy" data-state = "still" style="width: 200px; height: 200px;" src="https://media0.giphy.com/media/l0ErA4yJWrKFX8li0/giphy.gif">
 
-      
-      <img class= "giphy" data-state = "still" src = "https://media3.giphy.com/media/3o8dFDK1FtOLxigtGw/100.gif">
+        
+        <img class= "giphy" data-state = "still" src = "https://media3.giphy.com/media/3o8dFDK1FtOLxigtGw/100.gif">
 
-      <img class="giphy" data-state = "still" src="https://media2.giphy.com/media/VnikQOwjfMuD6/100.gif"> 
+        <img class="giphy" data-state = "still" src="https://media2.giphy.com/media/VnikQOwjfMuD6/100.gif"> 
 
-      <img class="giphy" data-state = "still" src="https://media1.giphy.com/media/aKiL9VwRJxSPC/100.gif">   
-  
+        <img class="giphy" data-state = "still" src="https://media1.giphy.com/media/aKiL9VwRJxSPC/100.gif"z>   
+    
+        </div>
       </div>
+               <!-- LABEL FOR THE FORM -->
+      <div class="formButton">
+      <form>
+        <label for="gif-input"> Add A Gif</label>
+        <input type="text" id="gif-input">
+      </form>
+      <!-- BUTTON FOR USER TO CLICK TO RETRIEVE DATA -->  
+      <button id="button" type="submit">Clicky Clicky</button>
+      <button id="pause" type="">Pause Audio</button>
+
+      </div> 
     </div>
-             <!-- LABEL FOR THE FORM -->
-    <div class="formButton">
-    <form>
-      <label for="gif-input"> Add A Gif</label>
-      <input type="text" id="gif-input">
-    </form>
-    <!-- BUTTON FOR USER TO CLICK TO RETRIEVE DATA -->  
-    <button id="button" type="submit">Clicky Clicky</button>
-    <button id="pause" type="">Pause Audio</button>
 
-    </div> 
-  </div>
+    
+  <!-- JAVASCRIPT LINK -->
+  <script src="./assets/javascript/giphy.js"></script>
 
-  
-<!-- JAVASCRIPT LINK -->
-<script src="./assets/javascript/giphy.js"></script>
-
-  </body>
-</html>
+    </body>
+  </html>

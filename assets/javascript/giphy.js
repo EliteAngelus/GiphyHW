@@ -1,4 +1,4 @@
-//STOP THE USER FROM HITTING THE ENTER KEY TO SUBMIT.  
+// FUNCTION TO STOP THE USER FROM HITTING ENTER TO SUMBIT
   $(document).ready(function() {
 
   $(window).keydown(function(event){
@@ -11,11 +11,13 @@
     }
   });
 });
+
+// ARRAY WITH INITIAL SEARCHES TOPICS
     
    var gifButtons = ["hip hop", "dance","break dance","pop and lock", "choreography", "dab", "reverse nae nae"];
 
-   var i ="";
-
+   
+// FUNCTION THAT WILL LOOPS THROUGH THE ARRY AND CREATE BUTTONS
      function renderButtons() {
         // Deletes the movies prior to adding new movies
         // (this is necessary otherwise you will have repeat buttons)
@@ -43,15 +45,15 @@
 
       // pushes userInput into the array
       gifButtons.push(gifInput);
+      // CALLS THE FUNCTION TO CREATE THE BUTTONS 
       renderButtons();
       event.preventDefault();
   
   });
 
-          // DISPLAYING THE GIFS ON THE PAGE.
+     // THIS FUNCTION WILL HAVE ANY GIF WITH THE GIPHY TO BE LOADED 
+     // WITH ITS STILL IMAGE AND ON CLICK WILL SWITCH THE THE ANIMATED IMAGE
     
-
-      //FUNCTION TO PAUSE THE GIFS
     $(document).on("click", ".giphy", function() {
       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
       var state = $(this).attr("data-state");
@@ -67,6 +69,8 @@
       }
     });
 
+
+// THIS FUNCTION USES THE GIPHY API TO PULL THE GIF IMAGES UNTO THE PAGE.
   function displayGifs(){
       var input = $(this).attr("data-name");
       var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag= " + input + ";" + ""
@@ -93,16 +97,13 @@
         // 
 
         console.log(response);
-
-
-        
+   
       });
     }
-
+//AN EVENT LISTENER THAT CREATES AN ON CLICK FUNCTION FOR ANYTHING WITH THE .giphyButton class.
+ //WHICH WILL TRIGGER THE displayGifs function 
 $(document).on("click", ".giphyButton", displayGifs);
 
-
-
+// CALLS OUR renderButtons FUNCTION
 renderButtons();
-
   
