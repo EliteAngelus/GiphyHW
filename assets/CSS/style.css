@@ -1,0 +1,51 @@
+ 
+  #button{
+      color: steelblue;
+      background-color: black;
+      border-radius: 10px;
+      margin: 5px;
+      margin-top: 20px;
+  }
+
+  .giphy,
+   .giphyButton
+          {
+    color: green;
+    border-radius: 10px;
+    margin: 11px;
+
+  }
+
+  .giphyButton{
+
+  }
+
+  form{
+    margin: 20px;  
+  }
+
+  .formButton{
+    float: left;
+    margin-left: : 10%;
+    background-color: #dddddd;
+    border-radius: 20px;
+    padding: 10px;  
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+
+  #images{
+    padding: 10px;
+   
+
+  }
+
+  #button-view{
+    text-align: center; 
+
+  }
+
+  img{
+    width: 200px;
+    height: 200px;
+  }
